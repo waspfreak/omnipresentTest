@@ -57,16 +57,16 @@ We need take in consideration, for each country will have some specifics field w
 show hide fields for each country
 
 ### App Structure
-  api/
-  components/
-      Header
-      Form
-  ui/
-    Button
-  constants/
-    text
-  App
-  index
+  -api
+  -- components
+  ----- Header
+  ----- Form
+  -ui
+  -- Button
+  ----- constants
+  ----- text
+  -App.ts
+  
   
 ### Actual State:
 Application is available in  "stage" [URL,(https://obscure-cove-99373.herokuapp.com/)]

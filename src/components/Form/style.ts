@@ -2,6 +2,7 @@ import styled from 'styled-components';
   
 export const Container = styled.div`
   width: 80%;
+  max-width: 1080px;
   margin-top: 2em;
   margin: 20px auto;
 `;
@@ -31,8 +32,7 @@ export const SelectStyle = styled.select`
   border-radius: 4px;
 `;
 
-export const Title = styled.h2`
-  color: #666;
-  font-size: 2em;
-  
-`;
+// export const Title = styled.h2`
+//   color: #666;
+//   font-size: 2em;
+// `;

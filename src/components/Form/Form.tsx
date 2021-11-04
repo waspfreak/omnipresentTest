@@ -1,10 +1,12 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '../../ui/Button/Button';
-import { Container, Label, Error, SelectStyle, Title } from './style';
+import { Container, Label, Error, SelectStyle } from './style';
 import { TextConstants, Country, MarriedStatus } from '../../constants/tests';
 
 import { InputField } from '../../ui/Input/Input';
+import { Typography } from '../../ui/Typography/Typography';
+
 
 export interface FormProps {
   id?: string;
@@ -56,8 +58,7 @@ const Form: React.FC<FormProps> = ({ id }) => {
   return (
     <>
       <Container>
-
-        <Title>New employees Form </Title>
+        <Typography size='h2'>New employees Form</Typography>
         <form data-testid='form-id' onSubmit={handleSubmit(onSubmit)}>
           <Label>{TextConstants.COUNTRY_WORK}</Label>
           <SelectStyle {...register('country', { required: true })} >
@@ -66,22 +67,21 @@ const Form: React.FC<FormProps> = ({ id }) => {
             <option value='Ghana'>{Country.GHANA}</option>
             <option value='Brazil'>{Country.BRAZIL}</option>
           </SelectStyle>
-          {errors.country && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+          {errors.country && <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>}
 
-          <Label>{TextConstants.FIRST_NAME}</Label>
+          <Typography size='label'>{TextConstants.FIRST_NAME}</Typography>
           <InputField type='text' data-testid='name-id' {...register('name', { required: true })} />
-          {errors.name && <Error >{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+          {errors.name && <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>}
 
-          <Label>{TextConstants.LAST_NAME}</Label>
+          <Typography size='label'>{TextConstants.LAST_NAME}</Typography>
           <InputField type='text' data-testid='lastName-id' {...register('lastName', { required: true })} />
-          {errors.lastName && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+          {errors.lastName && <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>}
 
-          <Label>{TextConstants.DATE_OF_BIRTH}</Label>
+          <Typography size='label'>{TextConstants.DATE_OF_BIRTH}</Typography>
           <InputField type='datetime' data-testid='data-id' placeholder="DD/MM/YYYY" {...register("dataBirth", { required: true })} />
-          {errors.dataBirth && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+          {errors.dataBirth && <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>}
 
-
-          <Label>{TextConstants.HOLIDAY_ALLOWANCE}</Label>
+          <Typography size='label'>{TextConstants.HOLIDAY_ALLOWANCE}</Typography>
           <InputField
             type='number'
             data-testid='holiday-id'
@@ -90,20 +90,20 @@ const Form: React.FC<FormProps> = ({ id }) => {
           {/* Ghana: No laws on holiday allowance */}
           {errors.holidayAllowance &&
             errors.holidayAllowance.type === 'required' && (
-              <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
+              <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>
             )}
           {/* Spain: Minimum holiday allowance is 30 days */}
           {errors.holidayAllowance && errors.holidayAllowance.type === 'min' && (
-            <Error>{TextConstants.MINIMUM_HOLIDAY_ALLOWANCE}</Error>
+            <Typography size='error'>{TextConstants.MINIMUM_HOLIDAY_ALLOWANCE}</Typography>
           )}
           {/* Brazil: Maximum holiday allowance is 40 days */}
           {errors.holidayAllowance && errors.holidayAllowance.type === 'max' && (
-            <Error>{TextConstants.MAXIMUM_HOLIDAY_ALLOWANCE}</Error>
+            <Typography size='error'>{TextConstants.MAXIMUM_HOLIDAY_ALLOWANCE}</Typography>
           )}
 
           {(CountryWork === 'Spain' || CountryWork === 'Ghana') && (
             <>
-              <Label>{TextConstants.MARITAL_STATUS}</Label>
+              <Typography size='label'>{TextConstants.MARITAL_STATUS}</Typography>
               <SelectStyle {...register('maritalStatus', { required: true })} >
                 <option value=''>{TextConstants.SELECT_MARITAL_STATUS} </option>
                 <option value='Spain'>{MarriedStatus.SINGLE}</option>
@@ -111,21 +111,20 @@ const Form: React.FC<FormProps> = ({ id }) => {
                 <option value='Brazil'>{MarriedStatus.SEPARATED}</option>
                 <option value='Brazil'>{MarriedStatus.DIVORCED}</option>
               </SelectStyle>
-              {errors.maritalStatus && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+              {errors.maritalStatus && <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>}
             </>
           )}
-
 
           {/* Extra Fields SPAIN */}
           {CountryWork === 'Spain' && (
             <>
-              <Label>{TextConstants.SOCIAL_INSURANCE_NUMBER}</Label>
+              <Typography size='label'>{TextConstants.SOCIAL_INSURANCE_NUMBER}</Typography>
               <InputField type='number' data-testid='socialNumber-id' {...register('socialInsuranceNumber', { required: true, maxLength: 10 })} />
               {errors.socialInsuranceNumber && errors.socialInsuranceNumber.type === 'required' && (
-                <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
+                <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>
               )}
               {errors.socialInsuranceNumber && errors.socialInsuranceNumber.type === 'maxLength' && (
-                <Error>{TextConstants.MAXIMUM_OF_DIGITS} </Error>
+                <Typography size='error'>{TextConstants.MAXIMUM_OF_DIGITS} </Typography>
               )}
             </>
           )}
@@ -133,10 +132,10 @@ const Form: React.FC<FormProps> = ({ id }) => {
           {/* Extra Fields GHANA */}
           {CountryWork === 'Ghana' && (
             <>
-              <Label>{TextConstants.NUMBER_OF_CHILDREN}</Label>
+              <Typography size='label'>{TextConstants.NUMBER_OF_CHILDREN}</Typography>
               <InputField type='number' {...register('socialInsuranceNumber', { required: true })} />
               {errors.socialInsuranceNumber && (
-                <Error>T{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
+                <Typography size='error'>T{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>
               )}
             </>
           )}
@@ -144,10 +143,10 @@ const Form: React.FC<FormProps> = ({ id }) => {
           {/* Extra Fields BRAZIL */}
           {CountryWork === 'Brazil' && (
             <>
-              <Label>{TextConstants.WORKING_HOURS}</Label>
+              <Typography size='label'>{TextConstants.WORKING_HOURS}</Typography>
               <InputField type='number' {...register('socialInsuranceNumber', { required: true })} />
               {errors.socialInsuranceNumber && (
-                <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
+                <Typography size='error'>{TextConstants.THIS_FIELD_IS_REQUIRED}</Typography>
               )}
             </>
           )}

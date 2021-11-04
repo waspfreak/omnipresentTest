@@ -51,7 +51,6 @@ export const Form: React.FC<FormProps> = ({ id }) => {
     }
   }
 
-
   return (
     <>
       <Container>
@@ -66,21 +65,22 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {errors.country && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.FIRST_NAME}</Label>
-          <Input {...register('name', { required: true })} />
-          {errors.name && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
+          <Input data-testid='name-id' {...register('name', { required: true })} />
+          {errors.name && <Error >{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.LAST_NAME}</Label>
-          <Input {...register('lastName', { required: true })} />
+          <Input data-testid='lastName-id' {...register('lastName', { required: true })} />
           {errors.lastName && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.DATE_OF_BIRTH}</Label>
-          <Input type="datetime" placeholder="DD/MM/YYYY" {...register("dataBirth", { required: true })} />
+          <Input type="datetime" data-testid='data-id' placeholder="DD/MM/YYYY" {...register("dataBirth", { required: true })} />
           {errors.dataBirth && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
 
           <Label>{TextConstants.HOLIDAY_ALLOWANCE}</Label>
           <Input
             type='number'
+            data-testid='holiday-id'
             {...register('holidayAllowance', { required: true, min: min(), max: max() })}
           />
           {/* Ghana: No laws on holiday allowance */}
@@ -116,7 +116,7 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {CountryWork === 'Spain' && (
             <>
               <Label>{TextConstants.SOCIAL_INSURANCE_NUMBER}</Label>
-              <Input type='number' {...register('socialInsuranceNumber', { required: true, maxLength: 10 })} />
+              <Input type='number' data-testid='socialNumber-id' {...register('socialInsuranceNumber', { required: true, maxLength: 10 })} />
               {errors.socialInsuranceNumber && errors.socialInsuranceNumber.type === 'required' && (
                 <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
               )}
@@ -148,7 +148,7 @@ export const Form: React.FC<FormProps> = ({ id }) => {
             </>
           )}
 
-          <Button data-testid='button-id' label={TextConstants.SEND} />
+          <Button id='send-id' label={TextConstants.SEND} />
         </form>
       </Container>
     </ >

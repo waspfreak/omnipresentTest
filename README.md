@@ -57,15 +57,15 @@ We need take in consideration, for each country will have some specifics field w
 show hide fields for each country
 
 ### App Structure
-  -api
-  -- components
-  ----- Header
-  ----- Form
-  -ui
-  -- Button
-  ----- constants
-  ----- text
-  -App.ts
+  - api
+    - components
+      - Header
+      - Form
+  - ui
+    - Button
+    - constants
+      - text
+  - App.ts
   
   
 ### Actual State:

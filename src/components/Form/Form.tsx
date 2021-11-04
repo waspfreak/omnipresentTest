@@ -1,9 +1,8 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '../../ui/Button/Button';
-import { Container, Label, Error, Input, SelectStyle } from './style';
+import { Container, Label, Error, Input, SelectStyle, Title } from './style';
 import { TextConstants, Country, MarriedStatus } from '../../constants/tests';
-
 export interface FormProps {
   id?: string;
 }
@@ -54,6 +53,8 @@ export const Form: React.FC<FormProps> = ({ id }) => {
   return (
     <>
       <Container>
+
+        <Title>New employees Form </Title>
         <form data-testid='form-id' onSubmit={handleSubmit(onSubmit)}>
           <Label>{TextConstants.COUNTRY_WORK}</Label>
           <SelectStyle {...register('country', { required: true })} >

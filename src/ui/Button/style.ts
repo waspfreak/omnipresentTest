@@ -4,7 +4,7 @@ export const ButtonStyle = styled.button`
     background: palevioletred;
     color: white;
     font-size: 1.5em;
-    margin: 1em;
+    margin-top: 1em;
     padding: 0.25em 1em;
     border: 2px solid palevioletred;
     border-radius: 3px;

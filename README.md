@@ -2,6 +2,70 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Dependencies: 
+  React Hook Form (For Inputs Validation)
+  Style-component (Style Components)
+
+# Folder Structure:
+  UI Folder: content UI Elements to be able to use outside of Form
+  Components: Use for Blocks of Components make use of Ui Components
+  App File to render Application
+
+# Task
+Your task is to create a form which changes based on the country an employee is being onboard in and allows us to collect the needed information for that country.
+
+There is some employee information that is needed for every country:
+- Country of work
+- First name
+- Last name
+- Date of birth
+- Holiday allowance
+
+Spain:
+
+- Extra fields:
+  - Marital status
+  - Social insurance number
+- Minimum holiday allowance is 30 days
+
+Ghana:
+
+- Extra fields:
+  - Marital status
+  - Number of children
+- No laws on holiday allowance
+
+Brazil:
+
+- Extra fields:
+  - Working hours
+- Maximum holiday allowance is 40 days
+
+# Proposal
+### What problem are you trying to solve?
+Clients needs add new employees to our service by using our platform to submit their details
+We need to create and application able to add new user and collect some information for onboarding.
+### Why should we solve it?
+Is important to collect new User information so will help when we need to do onboarding.
+
+### Solution Outline
+To create a form so the client can add new user and send this information by email.
+We need take in consideration, for each country will have some specifics field we will use country for 
+show hide fields for each country
+
+### App Structure
+  Login
+  Form 
+### Actual State:
+Application is available in stage URL,
+Presentation layer: UI Done
+### Next Stapes
+Persistence layer: will be necessary to connect to backend and implement inside Client Admin
+
+Additional Features: 
+  Send Email New User Email
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -28,43 +92,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const AppStyle = styled.div`
-	text-align: center;
-	display: flex;
+	/* display: flex;
 	align-content: center;
 	justify-content: center;
-  
+  flex-direction: row;
+	text-align: center; */
 `;
 

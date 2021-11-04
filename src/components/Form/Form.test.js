@@ -2,8 +2,6 @@ import {render, screen, fireEvent} from '@testing-library/react';
 
 import Form from './Form';
 
-const handleSubmit = jest.fn();
-
 describe('Form', () => {
 	it('should have a Form', () => {
 		render(<Form />);

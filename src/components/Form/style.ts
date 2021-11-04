@@ -2,8 +2,8 @@ import styled from 'styled-components';
   
 export const Container = styled.div`
   width: 80%;
-  min-height: 360px;
   margin-top: 2em;
+  margin: 20px auto;
 `;
 
 export const Input = styled.input`
@@ -12,7 +12,7 @@ export const Input = styled.input`
   font-size: 16px;
   border: 1px solid gray;
   padding: 0.5em;
-  width: 100%;
+  width: 99%;
 `;
 
 export const Label = styled.label`
@@ -38,4 +38,10 @@ export const SelectStyle = styled.select`
   font-size: 1.2em;
   line-height: inherit;
   border-radius: 4px;
+`;
+
+export const Title = styled.h2`
+  color: #666;
+  font-size: 2em;
+  
 `;

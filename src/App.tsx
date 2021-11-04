@@ -1,13 +1,14 @@
 import React from 'react';
-//import { AppStyle } from './style';
+import { Form } from './components/Form/Form'
+import { AppStyle } from './style';
 
 
 function App() {
 	return (
 		<div data-testid="app-id">
-
-			App Here
-
+			<AppStyle>
+				<Form />
+			</AppStyle>
 		</div>
 	);
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button } from '../../ui/Button/Button';
-import { Container, Label, Error, Input, SelectStyle, Title } from './style';
+import { Container, Label, Error, SelectStyle, Title } from './style';
 import { TextConstants, Country, MarriedStatus } from '../../constants/tests';
+
+import { InputField } from '../../ui/Input/Input';
+
 export interface FormProps {
   id?: string;
 }
@@ -18,7 +21,7 @@ type Inputs = {
   socialInsuranceNumber: number;
 };
 
-export const Form: React.FC<FormProps> = ({ id }) => {
+const Form: React.FC<FormProps> = ({ id }) => {
 
   const { register, handleSubmit, watch, formState: { errors }, } = useForm();
 
@@ -66,20 +69,20 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {errors.country && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.FIRST_NAME}</Label>
-          <Input data-testid='name-id' {...register('name', { required: true })} />
+          <InputField type='text' data-testid='name-id' {...register('name', { required: true })} />
           {errors.name && <Error >{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.LAST_NAME}</Label>
-          <Input data-testid='lastName-id' {...register('lastName', { required: true })} />
+          <InputField type='text' data-testid='lastName-id' {...register('lastName', { required: true })} />
           {errors.lastName && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
           <Label>{TextConstants.DATE_OF_BIRTH}</Label>
-          <Input type="datetime" data-testid='data-id' placeholder="DD/MM/YYYY" {...register("dataBirth", { required: true })} />
+          <InputField type='datetime' data-testid='data-id' placeholder="DD/MM/YYYY" {...register("dataBirth", { required: true })} />
           {errors.dataBirth && <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>}
 
 
           <Label>{TextConstants.HOLIDAY_ALLOWANCE}</Label>
-          <Input
+          <InputField
             type='number'
             data-testid='holiday-id'
             {...register('holidayAllowance', { required: true, min: min(), max: max() })}
@@ -117,7 +120,7 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {CountryWork === 'Spain' && (
             <>
               <Label>{TextConstants.SOCIAL_INSURANCE_NUMBER}</Label>
-              <Input type='number' data-testid='socialNumber-id' {...register('socialInsuranceNumber', { required: true, maxLength: 10 })} />
+              <InputField type='number' data-testid='socialNumber-id' {...register('socialInsuranceNumber', { required: true, maxLength: 10 })} />
               {errors.socialInsuranceNumber && errors.socialInsuranceNumber.type === 'required' && (
                 <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
               )}
@@ -131,7 +134,7 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {CountryWork === 'Ghana' && (
             <>
               <Label>{TextConstants.NUMBER_OF_CHILDREN}</Label>
-              <Input type='number' {...register('socialInsuranceNumber', { required: true })} />
+              <InputField type='number' {...register('socialInsuranceNumber', { required: true })} />
               {errors.socialInsuranceNumber && (
                 <Error>T{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
               )}
@@ -142,7 +145,7 @@ export const Form: React.FC<FormProps> = ({ id }) => {
           {CountryWork === 'Brazil' && (
             <>
               <Label>{TextConstants.WORKING_HOURS}</Label>
-              <Input type='number' {...register('socialInsuranceNumber', { required: true })} />
+              <InputField type='number' {...register('socialInsuranceNumber', { required: true })} />
               {errors.socialInsuranceNumber && (
                 <Error>{TextConstants.THIS_FIELD_IS_REQUIRED}</Error>
               )}

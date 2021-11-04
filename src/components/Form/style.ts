@@ -6,15 +6,6 @@ export const Container = styled.div`
   margin: 20px auto;
 `;
 
-export const Input = styled.input`
-  color: gray;
-  border-radius: 4px;
-  font-size: 16px;
-  border: 1px solid gray;
-  padding: 0.5em;
-  width: 99%;
-`;
-
 export const Label = styled.label`
   justify-self: flex-start;
   display: flex;

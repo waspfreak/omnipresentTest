@@ -63,8 +63,9 @@ show hide fields for each country
       - Form
   - ui
     - Button
-    - constants
-      - text
+    - Input
+  - constants
+    - text
   - App.ts
   
   
@@ -73,7 +74,7 @@ Application is available in  "stage" [URL,(https://obscure-cove-99373.herokuapp.
 
 Presentation layer: UI Done
 ### Next Stapes
-Persistence layer: will be necessary to connect to backend and implement inside Client Admin
+Service or integration Layer, will be necessary to connect to backend and implement inside Client Admin
 
 Additional Features: 
   Send Email New User Email

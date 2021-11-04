@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div data-testid="app-id">
 			<AppStyle>
-				<Header label='Omnipresent Form' />
+				<Header label='Omnipresent' />
 				<Form />
 			</AppStyle>
 		</div>

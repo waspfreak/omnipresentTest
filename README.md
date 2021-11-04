@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Application is available in "stage" [URL,(https://obscure-cove-99373.herokuapp.com/)]
+Please to be able to see the email we send log to console in Google Chrome Inspector
+
 # Dependencies: 
   React Hook Form (For Inputs Validation)
   Style-component (Style Components)
@@ -54,10 +57,19 @@ We need take in consideration, for each country will have some specifics field w
 show hide fields for each country
 
 ### App Structure
-  Login
-  Form 
+  api/
+  components/
+      Header
+      Form
+  ui/
+    Button
+  constants/
+    text
+  App
+  index
+  
 ### Actual State:
-Application is available in stage [URL,(https://obscure-cove-99373.herokuapp.com/)]
+Application is available in  "stage" [URL,(https://obscure-cove-99373.herokuapp.com/)]
 
 Presentation layer: UI Done
 ### Next Stapes
